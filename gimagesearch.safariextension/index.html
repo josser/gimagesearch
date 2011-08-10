@@ -1,0 +1,36 @@
+<html>
+<head>
+    <script type="text/javascript" language="JavaScript">
+
+        var gimagesearch = {
+            imgData: "",
+
+            init: function() {
+                safari.application.addEventListener("contextmenu", this.handleContextMenu, false);
+                safari.application.addEventListener("command", this.handleCommand, false);
+            },
+            handleCommand: function(event) {
+                gimagesearch.commands[event.command](event);
+            },
+            commands: {
+                search: function(event) {
+                    var newTab = safari.application.activeBrowserWindow.openTab();
+                    newTab.url = 'http://www.google.com/searchbyimage?image_url=' + gimagesearch.imgUrl;
+                }
+            },
+
+            handleContextMenu: function(event) {
+                console.log(event);
+                if (event.userInfo.nodeName == 'IMG') {
+                    event.contextMenu.appendContextMenuItem("search", "Search Google with this image");
+                    gimagesearch.imgUrl = event.userInfo.imgUrl;
+                }
+            }
+        };
+
+        gimagesearch.init();
+    </script>
+</head>
+<body>
+</body>
+</html>
