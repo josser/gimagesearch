@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Dmitry Chirkin</string>
 	<key>Builder Version</key>
-	<string>7534.48.3</string>
+	<string>7534.51.22</string>
 	<key>CFBundleDisplayName</key>
 	<string>Google Image Search</string>
 	<key>CFBundleIdentifier</key>
@@ -45,5 +45,7 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>https://raw.github.com/josser/gimagesearch/master/gimagesearch.safariextz</string>
 </dict>
 </plist>
