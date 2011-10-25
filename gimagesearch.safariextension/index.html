@@ -21,7 +21,6 @@
             },
 
             handleContextMenu: function(event) {
-                console.log(event);
                 if (event.userInfo.nodeName == 'IMG') {
                     event.contextMenu.appendContextMenuItem("search", "Search Google with this image");
                     gimagesearch.imgUrl = event.userInfo.imgUrl;
